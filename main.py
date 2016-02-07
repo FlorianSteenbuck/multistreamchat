@@ -61,7 +61,7 @@ if hitbox_conf.active:
 
 while(True):
 	lastlength = len(msgs)
-	#mergemsgs region
+	#merge
 	if hitbox_conf.active:
 		mergemsgs(hitbox.msgs,msgs,hitbox.appid)
 	if twitch_conf.active:
@@ -70,13 +70,11 @@ while(True):
 		mergemsgs(beampro.msgs,msgs,beampro.appid)
 	if yt_conf.active:
 		mergemsgs(yt.msgs,msgs,yt.appid)
-	#filter region
+	#filter
 	if sortbytime_conf.active:
 		msgs = sortbytime.run_filter(msgs)
 	if backtime_conf.active:
 		msgs = backtime.run_filter(msgs)
-	if test_conf.active:
-		msgs = test.run_filter(msgs)
 	if lastlength < len(msgs):
 		if filejson_conf.active:
 			filejson.run_pusher(msgs)
