@@ -75,8 +75,6 @@ while(True):
 		msgs = sortbytime.run_filter(msgs)
 	if backtime_conf.active:
 		msgs = backtime.run_filter(msgs)
-	if test_conf.active:
-		msgs = test.run_filter(msgs)
 	if lastlength < len(msgs):
 		if filejson_conf.active:
 			filejson.run_pusher(msgs)
